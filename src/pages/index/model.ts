@@ -9,7 +9,7 @@ export default {
   },
 
   effects: {
-    *getList({ payload }, { select, call, put }) {
+    *getList({ payload }, {call, put }) {
       const { error, result } = yield call(indexApi.getList, {
         ...payload
       });

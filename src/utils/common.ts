@@ -14,7 +14,7 @@ export const pad = (num: number, maxLength = 2) =>
 /**
  * 全局的公共变量
  */
-export let globalData: any = {};
+export const globalData: any = {};
 
 /**
  * 时间格式装换函数

@@ -1,11 +1,12 @@
 {
   "extends": ["taro"],
   "rules": {
-    "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+    "no-unused-vars": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".tsx"] }
-    ]
+    ],
+    "import/prefer-default-export": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

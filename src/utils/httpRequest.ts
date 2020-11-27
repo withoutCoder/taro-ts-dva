@@ -1,7 +1,7 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro, {Component} from '@tarojs/taro';
 
-import { commonParame, httpRequestConfig } from '@/config/httpRequestConfig';
-import { MAINHOST, ISMOCK } from '@/config/index';
+import {commonParame, httpRequestConfig} from '@/config/httpRequestConfig';
+import {ISMOCK, MAINHOST} from '@/config/index';
 import Tips from './tips';
 
 declare type Methods =
@@ -82,7 +82,7 @@ export class Request {
 
   static onLogining(): Promise<any> {
     this.isLoading = true;
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (_resolve, reject) => {
       // code
       const { code } = await Taro.login();
       const { data } = await Taro.request({
@@ -131,9 +131,8 @@ export class Request {
   static createRequests(opts: IOptions | string): () => {} {
     console.log('opts==>', opts);
     return async (data = {}, method: Methods = 'GET') => {
-      const _opts = this.combineOptions(opts, data, method);
-      const res = await this.request(_opts);
-      return res;
+      const _opts = this.combineOptions(opts, <Datas>data, method);
+      return await this.request(_opts);
     };
   }
 
